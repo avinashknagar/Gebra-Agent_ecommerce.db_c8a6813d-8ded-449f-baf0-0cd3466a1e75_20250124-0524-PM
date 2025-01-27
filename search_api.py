@@ -155,5 +155,6 @@ async def startup_event():
         raise RuntimeError(f'Failed to initialize API: {str(e)}')
 
 if __name__ == '__main__':
+    print("All Envs: ",os.environ)
     import uvicorn
     uvicorn.run(app, host='0.0.0.0', port=API_PORT)
