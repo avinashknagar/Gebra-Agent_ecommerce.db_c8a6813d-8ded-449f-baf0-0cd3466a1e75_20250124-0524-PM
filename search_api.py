@@ -149,6 +149,7 @@ async def startup_event():
     
     try:
         es_client = get_elasticsearch_client()
+        print(f"Elastic Client Info: {es_client.info()}")
         if not es_client.indices.exists(index=ES_INDEX):
             raise ValueError(f'Index {ES_INDEX} does not exist')
     except Exception as e:
